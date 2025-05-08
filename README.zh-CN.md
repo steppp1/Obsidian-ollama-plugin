@@ -1,4 +1,10 @@
-<div align="center">[**English**](README.md)</div>
+<div align="center">
+
+[**English**](README.md)
+
+</div>
+
+---
 
 # Obsidian Ollama 插件 (中文及Qwen3:8B 特别版)
 

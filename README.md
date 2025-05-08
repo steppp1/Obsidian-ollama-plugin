@@ -1,6 +1,10 @@
-<div align="center">[**简体中文**](README.zh-CN.md)</div>
+<div align="center">
 
-[简体中文](README.zh-CN.md)
+[**简体中文**](README.zh-CN.md)
+
+</div>
+
+---
 
 # Obsidian Ollama Plugin (Enhanced for Chinese & Qwen3:8B)
 
