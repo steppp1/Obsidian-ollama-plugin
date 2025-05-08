@@ -1,14 +1,14 @@
-[English](README.md)
+<div align="center">[**English**](README.md)</div>
 
-# Obsidian Ollama 插件 (中文及通义千问 Qwen3:8B 增强版)
+# Obsidian Ollama 插件 (中文及Qwen3:8B 特别版)
 
-本项目基于原版 [Obsidian Ollama 插件](https://github.com/your-original-plugin-repo-link) 进行修改，旨在提供更好的中文支持并优化对特定开源模型的集成。
+本项目基于原版 [Obsidian Ollama 插件](https://github.com/your-original-plugin-repo-link) 进行修改，旨在提供更好的中文支持并优化对Qwen3:8B模型的集成。
 
 ## 项目简介
 
 原版 Obsidian Ollama 插件是一个非常实用的工具，它允许用户直接在 Obsidian 笔记软件中与本地运行的 Ollama 模型进行交互。然而，在使用过程中发现其对中文 Prompt 的支持不够理想，且对如通义千问 Qwen3:8B 这类新兴模型在输出格式上可能存在一些不便。
 
-本修改版本针对这些问题进行了优化，特别加强了对中文 Prompt 的原生支持，并对 Qwen3:8B 模型的输出进行了后处理，移除了其内部的思考过程，使输出更简洁直观，更适合在笔记中使用。
+本修改版本针对这些问题进行了优化，特别加强了对中文 Prompt 的原生支持，并对 Qwen3:8B 模型的输出进行了后处理，**默认移除了其内部的思考过程**，使输出更简洁直观，更适合在笔记中使用。
 
 **注意:** 本插件依赖于你在本地正确安装并运行了 Ollama 服务，并且已经下载了你想要使用的模型（例如 `qwen:8b`）。
 
@@ -34,6 +34,7 @@
     * **方法 B (手动下载):** 前往本项目的 GitHub 页面，点击绿色的 "Code" 按钮，选择 "Download ZIP"。下载完成后，将 ZIP 文件解压。你会得到一个文件夹（通常是 `Obsidian-ollama-plugin-master` 或类似名称），将这个文件夹完整地复制或移动到你文件库的 `.obsidian/plugins/` 目录下。为了保持一致性，建议将文件夹名称重命名为 `Obsidian-ollama-plugin`。
 
 5.  **在 Obsidian 中启用插件：**
+    
     * 打开 Obsidian。
     * 进入 "设置" (Settings) -> "第三方插件" (Community plugins)。
     * 在 "已安装插件" (Installed plugins) 列表中找到 "Obsidian Ollama Plugin (Enhanced)" 或类似名称的插件。
@@ -59,18 +60,7 @@
 4.  推送到分支 (`git push origin feature/AmazingFeature`)。
 5.  打开一个 Pull Request。
 
-## 许可证
-
-本项目基于原版插件进行修改，请参考原版插件的许可证信息。同时，建议你也为本项目选择一个合适的开源许可证（例如 MIT 或 Apache 2.0），并在项目根目录下创建 `LICENSE` 文件。
-
 ## 致谢
 
-感谢 [原版 Obsidian Ollama 插件](https://github.com/your-original-plugin-repo-link) 的开发者们，他们的工作为本项目奠定了基础。
+感谢 [原版 Obsidian Ollama 插件](https://github.com/hinterdupfinger/obsidian-ollama) 的开发者们，他们的工作为本项目奠定了基础。
 
----
-
-**请注意：**
-
-* 请将 `https://github.com/your-original-plugin-repo-link` 替换为原版 Obsidian Ollama 插件的 GitHub 仓库地址。如果你不知道，可以简单地写 "原版 Obsidian Ollama 插件"。
-* 请根据你的实际文件夹名称和插件在 Obsidian 中显示的名称，调整安装说明中的提及的名称。
-* 请务必在你的项目根目录下添加一个 `LICENSE` 文件，并选择一个合适的开源许可证。
