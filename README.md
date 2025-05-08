@@ -1,81 +1,72 @@
 <div align="center">
 
-[**简体中文**](README.zh-CN.md) | **English** |
+[**English**](README.md) | **中文简体** |
 
 </div>
 
 ---
 
-# Obsidian Ollama Plugin (Enhanced for Chinese & Qwen3:8B)
+# Obsidian Ollama 插件 (中文及Qwen3:8B 特别版)
 
-This project is a modified version of the original [Obsidian Ollama Plugin](https://github.com/your-original-plugin-repo-link), aimed at providing better support for the Chinese language and optimized integration for the Qwen3:8B model.
+本项目基于原版 [Obsidian Ollama 插件](https://github.com/your-original-plugin-repo-link) 进行修改，旨在提供更好的中文支持并优化对Qwen3:8B模型的集成。
 
-## ✨ Project Overview
+## ✨项目简介
 
-The original Obsidian Ollama Plugin is a fantastic tool that lets users interact directly with a locally running Ollama service within the Obsidian note-taking software. However, during use, it was found that its support for **Chinese Prompts** wasn't ideal, and for newer models like **Tongyi Qianwen Qwen3:8B**, the output format could be inconvenient, sometimes including internal thinking processes.
+原版 Obsidian Ollama 插件是一个非常实用的工具，它允许用户直接在 Obsidian 笔记软件中与本地运行的 Ollama 模型进行交互。然而，在使用过程中发现其对中文 Prompt 的支持不够理想，且对如通义千问 Qwen3:8B 这类新兴模型在输出格式上可能存在一些不便。
 
-This modified version tackles these issues! It specifically strengthens **native Chinese Prompt support** and adds a "filter" for the Qwen3:8B output, by default removing the model's internal thinking process (like `` or similar markers). This results in cleaner output, making it more suitable for use in your notes.
+本修改版本针对这些问题进行了优化，特别加强了对中文 Prompt 的原生支持，并对 Qwen3:8B 模型的输出进行了后处理，**默认移除了其内部的思考过程**，使输出更简洁直观，更适合在笔记中使用。
 
-**📌 Note:** Before using this plugin, please ensure you have the **Ollama service correctly installed and running** on your local machine, and that you have **downloaded the model you want to use** (e.g., by running `ollama pull qwen:8b`).
+📌**注意:** 本插件依赖于你在本地正确安装并运行了 Ollama 服务，并且已经下载了你想要使用的模型（例如 `qwen:8b`）。
 
-## 🚀 Key Features
+## 🚀主要特性
 
--   **Seamless Chinese Prompt Handling:** Significantly optimized the plugin's logic for processing Chinese Prompts, ensuring your Chinese input is accurately passed to and understood by the Ollama model.
--   **Optimized Qwen3:8B Support:** Integrated and tested specifically with the Tongyi Qianwen Qwen3:8B model, ensuring stable operation within the plugin.
--   **Cleaner Output Filtering:** Automatically identifies and **by default removes** the internal thinking process often included in the Qwen3:8B model's output, leaving only the essential generated text.
+* **原生中文 Prompt 支持:** 优化了插件与 Ollama 交互时对中文 Prompt 的处理，确保中文输入能被正确传递和理解。
+* **优化支持通义千问 Qwen3:8B 模型:** 对接并测试了 Qwen3:8B 模型，确保其能在插件中稳定使用。
+* **过滤 Qwen3:8B 模型输出:** 自动识别并移除 Qwen3:8B 模型输出中通常包含的内部思考过程（例如 `` 或类似的标记），只保留最终的生成文本。
 
-## ⬇️ Installation Guide
+## ⬇️安装教程
 
-Installing this plugin is similar to other third-party Obsidian plugins, but since it's a modified version, you'll need to install it manually:
+本插件的安装方式与标准的 Obsidian 第三方插件类似，但由于是修改版本，你需要手动安装：
 
-1.  **Locate your Obsidian Vault path:** This is the main folder where you store all your Obsidian notes.
-2.  **Navigate to the `.obsidian` folder:** Inside your vault path, find a **hidden folder** named `.obsidian`. If you can't see it, make sure your operating system settings are configured to show hidden files.
-3.  **Navigate to the `plugins` folder:** Inside the `.obsidian` folder, find or create a folder named `plugins`.
-4.  **Download and Place Project Files:**
-    * **Method A (Recommended - Using Git):** Open your terminal or command prompt inside the `plugins` folder and clone this repository:
+1.  **找到你的 Obsidian 文件库（Vault）路径：** 这是你存储所有 Obsidian 笔记的文件夹。
+2.  **进入 `.obsidian` 文件夹：** 在你的文件库路径下，找到一个名为 `.obsidian` 的隐藏文件夹。如果看不到，请确保你的操作系统设置中允许显示隐藏文件。
+3.  **进入 `plugins` 文件夹：** 在 `.obsidian` 文件夹内，找到或创建一个名为 `plugins` 的文件夹。
+4.  **下载并放置本项目文件：**
+    * **方法 A (推荐 - 使用 Git):** 在 `plugins` 文件夹内打开终端或命令行，运行以下命令克隆本项目仓库：
         ```bash
         git clone [https://github.com/steppp1/Obsidian-ollama-plugin.git](https://github.com/steppp1/Obsidian-ollama-plugin.git)
         ```
-        This will create a subfolder named `Obsidian-ollama-plugin` inside `plugins` and download the project code into it.
-    * **Method B (Manual Download & Extract):** Go to this project's GitHub page, click the green "Code" button, and select "Download ZIP". After downloading, extract the ZIP file. You'll get a folder (usually named something like `Obsidian-ollama-plugin-master`). Copy or move this **entire folder** into your vault's `.obsidian/plugins/` directory. For tidiness, it's recommended to rename the folder to `Obsidian-ollama-plugin`.
-5.  **Enable the Plugin in Obsidian:**
-    * Open your Obsidian app.
-    * Go to "**Settings**" -> "**Community plugins**".
-    * In the "**Installed plugins**" list, find the plugin named "**Obsidian Ollama Plugin (Enhanced)**" or similar.
-    * Click the **toggle switch** next to it to turn it on!
+        这会在 `plugins` 文件夹下创建一个名为 `Obsidian-ollama-plugin` 的子文件夹，并将本项目文件下载到其中。
+    * **方法 B (手动下载):** 前往本项目的 GitHub 页面，点击绿色的 "Code" 按钮，选择 "Download ZIP"。下载完成后，将 ZIP 文件解压。你会得到一个文件夹（通常是 `Obsidian-ollama-plugin-master` 或类似名称），将这个文件夹完整地复制或移动到你文件库的 `.obsidian/plugins/` 目录下。为了保持一致性，建议将文件夹名称重命名为 `Obsidian-ollama-plugin`。
 
-## 💡 How to Use
+5.  **在 Obsidian 中启用插件：**
+    
+    * 打开 Obsidian。
+    * 进入 "设置" (Settings) -> "第三方插件" (Community plugins)。
+    * 在 "已安装插件" (Installed plugins) 列表中找到 "Obsidian Ollama Plugin (Enhanced)" 或类似名称的插件。
+    * 点击旁边的开关按钮启用该插件。
 
-1.  First, **ensure your Ollama service is running** in the background and you **have the required model downloaded** (e.g., `ollama pull qwen:8b`).
-2.  After enabling the plugin in Obsidian, its settings should appear in the Obsidian settings menu. Here, you'll likely need to specify the Ollama service address (usually `http://localhost:11434`) and the **name of the model** you want to use by default (e.g., fill in `qwen:8b`).
-3.  Then you're ready to go! Based on the plugin's configuration (often triggered via the **command palette** or a **hotkey**), select some text and run an Ollama-related command (like "**Complete text**" or "**Chat**") to have the model generate content for you.
+## 💡如何使用
 
-## 🤝 Compatibility
+1.  **确保 Ollama 服务正在运行** 并且你已经下载了所需的模型（如 `ollama pull qwen:8b`）。
+2.  在 Obsidian 中启用本插件后，通常会在设置中出现 Ollama 插件的配置项。你可能需要在这里指定 Ollama 服务的地址（通常是 `http://localhost:11434`）以及你想默认使用的模型名称（例如 `qwen:8b`）。
+3.  根据插件的设定（通常可以通过命令面板或快捷键触发），选择文本并运行 Ollama 命令（例如 "Complete text" 或 "Chat"）来与模型进行交互。
 
-This plugin modification is based on a specific version of the original Obsidian Ollama Plugin and has been tested in particular Obsidian and Ollama environments. While it should theoretically be compatible with newer versions, please feel free to open an Issue if you encounter any strange problems in your setup.
+## 🤝兼容性
 
-## 🙌 Contributing
+本插件修改基于原版 Obsidian Ollama 插件的某个版本进行，并已在特定的 Obsidian 版本和 Ollama 环境下进行测试。虽然理论上应该兼容较新版本的 Obsidian 和 Ollama，但如果在特定环境中遇到问题，欢迎提交 Issue。
 
-Contributions are super welcome! If you find a bug or have cool ideas for improvements, feel free to open an Issue or submit a Pull Request.
+## 🙌 贡献
 
-1.  Start by Forking this repository.
-2.  Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3.  Commit your changes (`git commit -m 'Added an awesome feature'`).
-4.  Push your branch to your Forked repository (`git push origin feature/AmazingFeature`).
-5.  Finally, open a Pull Request to this repository!
+欢迎对此项目做出贡献！如果你发现 Bug 或有改进建议，请随时提交 Issue 或 Pull Request。
 
-## 📜 License
+1.  Fork 本仓库。
+2.  创建你的特性分支 (`git checkout -b feature/AmazingFeature`)。
+3.  提交你的更改 (`git commit -m 'Add some AmazingFeature'`)。
+4.  推送到分支 (`git push origin feature/AmazingFeature`)。
+5.  打开一个 Pull Request。
 
-This project is a modification based on the original plugin. Please refer to the original plugin's license information. It's also recommended that you choose a suitable open-source license for this modified project (like **MIT** or **Apache 2.0**) and include a **LICENSE** file in the project root directory to state it clearly.
+## 🙏致谢
 
-## 🙏 Acknowledgements
+感谢 [原版 Obsidian Ollama 插件](https://github.com/hinterdupfinger/obsidian-ollama) 的开发者们，他们的工作为本项目奠定了基础。
 
-Huge thanks to the developers of the [original Obsidian Ollama Plugin](https://github.com/your-original-plugin-repo-link)! Their hard work laid the foundation for this project. Thank you!
-
----
-
-**Quick Notes:**
-
-* Please replace `https://github.com/your-original-plugin-repo-link` with the actual GitHub repository link of the original Obsidian Ollama Plugin. If you can't find the specific link, just writing "the original Obsidian Ollama Plugin" is fine.
-* Ensure you have both `README.md` (English version) and `README.zh-CN.md` (Chinese version) files in your project root directory, and that the links at the top of each file correctly point to the other.
-* Remember to choose an open-source license and create the `LICENSE` file!
